@@ -1,5 +1,5 @@
 require "prime_tables/version"
+require "prime_tables/multiplication"
 
 module PrimeTables
-  # Your code goes here...
 end
