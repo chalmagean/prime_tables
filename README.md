@@ -1,41 +1,56 @@
 # PrimeTables
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prime_tables`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a coding exercise
 
-TODO: Delete this and the text above, and describe your gem
+## Introduction
 
-## Installation
+Write an application that takes numeric input (N) from a user and outputs a multiplication table of (N) prime numbers.
+This should not take you more than a couple of hours. But the aim is NOT to see how much you can code in a given time, so feel free to spend as much time as you want to highlight your level of coding.
+You must put your code onto GitHub, otherwise we won’t consider it. We will review it from there.
 
-Add this line to your application's Gemfile:
+## The requirements
 
-```ruby
-gem 'prime_tables'
+- You can use whatever programming language you like for this exercise - we mainly use C# and JavaScript internally
+- Write your application with high unit test coverage
+- For the input and output you can use the console, a web page, or something else
+- Please write an algorithm to solve the prime number generation - do not use a library method to generate your primes
+- The user should input a whole number N, where is N is at least 1
+- The application should output an N+1 x N+1 grid of numbers (we will test it with N == 1)
+
+## How to run
+
+Start a ruby REPL (I am using Ruby 2.2.3).
+
+```
+$ irb
+2.2.3 :001 > require 'prime_tables'
+2.2.3 :001 > table = PrimeTables::Multiplication.new(5)
+
+2.2.3 :001 > table.render(formatter)
 ```
 
-And then execute:
+Should render a table like this:
 
-    $ bundle
+```
+|      |    2 |    3 |    5 |    7 |   11 |
+|    2 |    4 |    6 |   10 |   14 |   22 |
+|    3 |    6 |    9 |   15 |   21 |   33 |
+|    5 |   10 |   15 |   25 |   35 |   55 |
+|    7 |   14 |   21 |   35 |   49 |   77 |
+|   11 |   22 |   33 |   55 |   77 |  121 |
+```
 
-Or install it yourself as:
+## Tests
 
-    $ gem install prime_tables
+To run the whole test suite:
 
-## Usage
+```
+$ rspec
+```
 
-TODO: Write usage instructions here
+## Conclusions
 
-## Development
+Overall this seems like a good solution. Given more time, I would probably learn more about how to generate prime numbers and optimize for better performance.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/prime_tables.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The output formatter is very easy to extend, you just need to add another formatter and pass it in to the multiplication instance as a renderer.
 
