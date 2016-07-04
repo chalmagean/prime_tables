@@ -5,6 +5,7 @@ module PrimeTables
     def initialize(size)
       @size = size
       raise ArgumentError, 'Size should be greater than 1' if @size < 1
+      raise ArgumentError, 'Input should be an integer' unless @size.is_a?(Integer)
     end
 
     def render(renderer = DefaultFormatter.new)

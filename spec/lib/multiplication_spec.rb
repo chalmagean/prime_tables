@@ -11,6 +11,11 @@ module PrimeTables
         to raise_error(ArgumentError, 'Size should be greater than 1')
     end
 
+    it 'requires the input to be an integer' do
+      expect { Multiplication.new(1.2) }.
+        to raise_error(ArgumentError, 'Input should be an integer')
+    end
+
     describe '#render' do
       it 'returns multiplication table as an array' do
         multiplication = Multiplication.new(3)
