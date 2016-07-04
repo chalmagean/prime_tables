@@ -19,12 +19,13 @@ You must put your code onto GitHub, otherwise we won’t consider it. We will re
 
 ## How to run
 
-Start a ruby REPL (I am using Ruby 2.2.3).
+Start a ruby REPL (I am using Ruby 2.2.3). The example below uses the number `5` as the size of the primes array.
 
 ```
 $ irb
 2.2.3 :001 > require 'prime_tables'
 2.2.3 :001 > table = PrimeTables::Multiplication.new(5)
+2.2.3 :001 > formatter = PrimeTables::TextFormatter.new
 
 2.2.3 :001 > table.render(formatter)
 ```
@@ -38,6 +39,22 @@ Should render a table like this:
 |    5 |   10 |   15 |   25 |   35 |   55 |
 |    7 |   14 |   21 |   35 |   49 |   77 |
 |   11 |   22 |   33 |   55 |   77 |  121 |
+```
+
+Let's try a different size:
+
+```
+2.2.3 :001 > table = PrimeTables::Multiplication.new(3)
+2.2.3 :001 > table.render(formatter)
+```
+
+This time, the table is smaller:
+
+```
+|     |   2 |   3 |   5 |
+|   2 |   4 |   6 |  10 |
+|   3 |   6 |   9 |  15 |
+|   5 |  10 |  15 |  25 |
 ```
 
 ## Tests
