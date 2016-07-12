@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'prime_tables'
+
+if ARGV.empty? || !/\A\d+\z/.match(ARGV[0])
+  puts 'Please provide a positive natural number as an argument'
+  exit
+end
+
+number = ARGV[0].to_i
+
+if number == 0
+  puts 'Please provide a number greater than 0'
+  exit
+end
+
+formatter = PrimeTables::TextFormatter.new
+table = PrimeTables::Multiplication.new(ARGV[0].to_i)
+$stdout.print table.render(formatter)
+$stdout.flush
+
