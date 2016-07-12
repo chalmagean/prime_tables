@@ -22,12 +22,9 @@ You must put your code onto GitHub, otherwise we won’t consider it. We will re
 Start a ruby REPL (I am using Ruby 2.2.3). The example below uses the number `5` as the size of the primes array.
 
 ```
-$ irb
-2.2.3 :001 > require 'prime_tables'
-2.2.3 :001 > table = PrimeTables::Multiplication.new(5)
-2.2.3 :001 > formatter = PrimeTables::TextFormatter.new
-
-2.2.3 :001 > table.render(formatter)
+$ git clone git@github.com:chalmagean/prime_tables.git
+$ cd prime_tables
+$ ruby -Ilib ./bin/prime_tables 5
 ```
 
 Should render a table like this:
@@ -44,8 +41,7 @@ Should render a table like this:
 Let's try a different size:
 
 ```
-2.2.3 :001 > table = PrimeTables::Multiplication.new(3)
-2.2.3 :001 > table.render(formatter)
+$ ruby -Ilib ./bin/prime_tables 3
 ```
 
 This time, the table is smaller:
