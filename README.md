@@ -19,7 +19,7 @@ You must put your code onto GitHub, otherwise we won’t consider it. We will re
 
 ## How to run
 
-Start a ruby REPL (I am using Ruby 2.2.3). The example below uses the number `5` as the size of the primes array.
+The example below uses the number `5` as the size of the primes array.
 
 ```
 $ git clone git@github.com:chalmagean/prime_tables.git
